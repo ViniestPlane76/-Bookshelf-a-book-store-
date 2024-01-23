@@ -1,0 +1,8 @@
+/.idea/*
+/MVCsklep/.idea/*
+/MVCsklep/demo/.mvn/*
+/MVCsklep/demo/target/*
+/sklep/.angular/*
+/sklep/node_modules/*
+/sklep/.vscode/*
+/sklep/dist/*
