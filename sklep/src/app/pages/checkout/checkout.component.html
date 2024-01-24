@@ -1,0 +1,22 @@
+<ng-container *ngIf="cart$|async as cart">
+    <h2>
+        Your order:
+    </h2>
+    <div class="items">
+        <mat-card *ngFor="let item of cart; let i=index">
+            <mat-card-header>
+                <mat-card-title>{{item.title}}</mat-card-title>
+                <mat-card-subtitle>{{item.price}} USD</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+    <h2>
+        Total: {{cartSum$|async}} USD
+    </h2>
+    
+    <a routerLink="/address">
+        <button mat-raised-button color="primary">
+            Next step
+        </button>
+    </a>
+</ng-container>

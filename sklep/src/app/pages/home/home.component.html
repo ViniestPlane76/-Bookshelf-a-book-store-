@@ -1,0 +1,22 @@
+<app-searchbar (searchChange)="handleChange($event)"></app-searchbar>
+<div *ngIf="books$ | async as books; else loading" class="wrapper">
+    <mat-card *ngFor="let book of (search|filter:books)" class="card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ book.title }}</mat-card-title>
+            <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class="content">
+            {{ book.price }} USD
+        
+            <button mat-button color="primary" (click)="addBook(book)">
+                Buy
+            </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  <ng-template #loading>
+    <mat-spinner/>
+  </ng-template>
