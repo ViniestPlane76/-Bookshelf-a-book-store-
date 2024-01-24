@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <div class="buttoncart">
+        <span>Bookshelf</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon [class.material-icons-outlined]="(cart$|async).length==0">shopping_cart</mat-icon>
+            </button>
+    </div>
+</mat-toolbar>
+<div class="body">
+    <ng-content></ng-content>
+</div>
+<mat-menu #menu="matMenu">
+    <ng-container *ngIf="cart$|async as cart">
+        <div *ngFor="let item of cart; let i=index">
+            {{item.title}}
+            {{item.price}} USD
+            <button mat-icon-button (click)="$event.stopPropagation();removeItem(i)">
+                <mat-icon>
+                    delete
+                </mat-icon>
+            </button>
+        </div>
+        <h2>
+            Total: {{cartSum$|async}} USD
+        </h2>
+        <a routerLink="/checkout">
+            <button mat-raised-button color="primary">
+                Proceed to checkout
+            </button>
+        </a>
+        
+    </ng-container>
+</mat-menu>
