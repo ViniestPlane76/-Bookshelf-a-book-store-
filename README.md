@@ -17,7 +17,7 @@ Bookshelf to projekt stworzony w ramach przedmiotu "Tworzenie Aplikacji dla Śro
  -  `docker-compose.yml`: Konfiguracja Docker Compose.
 ## Użycie
 1. Sklonuj repozytorium: ``git clone git@github.com:ViniestPlane76/-Bookshelf-a-book-store-.git``
-2. Uruchom aplikację za pomocą Docker Compose: ``docker-compose up``
+2. Uruchom aplikację za pomocą Docker Compose: ``docker compose up``
 3. Otwórz aplikację: 
  -   Backend API: [http://localhost:8080/api/book/v1](http://localhost:8080/api/book/v1)
 -   Frontend: [http://localhost:4200](http://localhost:4200/)
